@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class RadiusBehavior : MonoBehaviour
 {
+    [SerializeField] private float duration;
+
     void Start()
     {
         
@@ -16,14 +18,13 @@ public class RadiusBehavior : MonoBehaviour
     {
         if (other.gameObject.tag == "Human")
         {
-            print("touching" + other);
-        /*
-        mass++;
-        massText.setMass(mass);
-        other.gameObject.GetComponent<Pellet>().slurp(this.gameObject.transform);
-
-        StartCoroutine(grow(0.08f));
-        */
+            if(this.gameObject.transform.parent.gameObject.tag == "Virtue")
+            {
+                other.gameObject.GetComponent<HumanController>().headAwayFromTree(duration);
+            } else
+            {
+                other.gameObject.GetComponent<HumanController>().headToLocation(new Vector3(this.gameObject.transform.position.x, this.gameObject.transform.position.y, 0));
+            }
         }
     }
 }

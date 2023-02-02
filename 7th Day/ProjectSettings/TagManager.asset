@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Radius
   - Human
+  - Temptation
+  - Virtue
+  - Tree
   layers:
   - Default
   - TransparentFX
