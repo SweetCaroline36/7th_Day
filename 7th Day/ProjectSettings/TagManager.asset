@@ -9,6 +9,8 @@ TagManager:
   - Temptation
   - Virtue
   - Tree
+  - Obstacle
+  - SpawnZone
   layers:
   - Default
   - TransparentFX

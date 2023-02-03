@@ -3,6 +3,8 @@ using UnityEngine;
 public class RadiusBehavior : MonoBehaviour
 {
     [SerializeField] private float duration;
+    [SerializeField] private int strength;
+    [SerializeField] private ItemBehavior itemBehavior;
 
     void Start()
     {
@@ -23,7 +25,7 @@ public class RadiusBehavior : MonoBehaviour
                 other.gameObject.GetComponent<HumanController>().headAwayFromTree(duration);
             } else
             {
-                other.gameObject.GetComponent<HumanController>().headToLocation(new Vector3(this.gameObject.transform.position.x, this.gameObject.transform.position.y, 0));
+                other.gameObject.GetComponent<HumanController>().startTemptation(new Vector3(this.gameObject.transform.position.x, this.gameObject.transform.position.y, 0), itemBehavior.getExistenceDuration());
             }
         }
     }

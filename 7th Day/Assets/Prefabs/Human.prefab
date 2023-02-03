@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7633963846386859175}
   - component: {fileID: 7633963846386859174}
   m_Layer: 0
-  m_Name: Adam
+  m_Name: Human
   m_TagString: Human
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 7633963846386859181}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.01, y: -7.76, z: 0}
-  m_LocalScale: {x: 0.9, y: 0.9, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -77,8 +77,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0.15325737, g: 0.7924528, b: 0.7798044, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 83bc289f84ce31245bd997e25a66ed75, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -102,7 +102,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ai: {fileID: 7633963846386859174}
   walkingTowardsTree: 1
-  treeTransform: {fileID: 0}
+  tempted: 0
+  speed: 1
+  bar: {fileID: 0}
 --- !u!58 &7633963846386859169
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -163,7 +165,7 @@ MonoBehaviour:
   radius: 1
   height: 2
   canMove: 1
-  maxSpeed: 2
+  maxSpeed: 1
   gravity: {x: 0, y: 0, z: 0}
   groundMask:
     serializedVersion: 2
