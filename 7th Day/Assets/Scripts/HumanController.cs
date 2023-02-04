@@ -8,24 +8,16 @@ public class HumanController : MonoBehaviour
     [SerializeField] private AIPath ai;
     [SerializeField] private bool walkingTowardsTree = true;
     [SerializeField] private bool tempted = false;
-    [SerializeField] private float speed = 1;
+    [SerializeField] private float speed;
+    [SerializeField] private SpriteRenderer highlight;
     private Vector3 treePos;
     private Vector3 startingPos;
     private Vector3 goalPos;
     private Coroutine activeCoroutine = null;
-    //private Collider2D[] obstacleColliders;
 
     void Start()
     {
         GameObject tree = GameObject.FindWithTag("Tree");
-
-        /*
-        GameObject[] obstacles = GameObject.FindGameObjectsWithTag("Obstacle");
-        for (int i = 0; i < obstacles.Length; i++)
-        {
-            obstacleColliders[i] = obstacles[i].GetComponent<Collider2D>();
-        }
-        */
 
         startingPos = new Vector3(this.gameObject.transform.position.x, this.gameObject.transform.position.y, 0);
         treePos = new Vector3(tree.transform.position.x, tree.transform.position.y, 0);
@@ -40,6 +32,7 @@ public class HumanController : MonoBehaviour
         }
     }
 
+    //default
     public void headToTree()
     {
         walkingTowardsTree = true;
@@ -47,23 +40,23 @@ public class HumanController : MonoBehaviour
         ai.SearchPath();
     }
 
-    public void headToLocationAI(Vector3 location)
-    {
-        ai.destination = location;
-        ai.SearchPath();
-    }
-
+    //the three temptation items
     public void startTemptation(Vector3 target, float duration)
     {
         ai.isStopped = true;
-        setGoalPos(target);
+        goalPos = target;
         tempted = true;
         StartCoroutine(distracted(duration));
     }
 
-    public void setGoalPos(Vector3 target)
+    public IEnumerator distracted(float waitTime)
     {
-        goalPos = target;
+        yield return new WaitForSeconds(waitTime);
+
+        tempted = false;
+        ai.isStopped = false;
+
+        yield break;
     }
 
     public void headTowardsLocation(Vector3 target)
@@ -72,6 +65,7 @@ public class HumanController : MonoBehaviour
         transform.position = Vector3.MoveTowards(transform.position, target, step);
     }
 
+    //bible effects
     public void headAwayFromTree(float timer)
     {
         if (walkingTowardsTree)
@@ -98,19 +92,41 @@ public class HumanController : MonoBehaviour
         yield break;
     }
 
-    public IEnumerator distracted(float waitTime)
+    //knife effects
+    public void die()
     {
-        yield return new WaitForSeconds(waitTime);
-
-        tempted = false;
-        ai.isStopped = false;
-        //goalPos = null;
-
-        yield break;
+        Destroy(this.gameObject);
     }
 
-    public void togglePath()
+    void OnMouseEnter()
     {
-        ai.isStopped = !ai.isStopped;
+        if (PlayerController.murdering)
+        {
+            highlight.enabled = true;
+        }
+    }
+    void OnMouseExit()
+    {
+        highlight.enabled = false;
+    }
+    void OnMouseDown()
+    {
+        if (PlayerController.murdering)
+        {
+            die();
+            PlayerController.murdering = false;
+        }
+    }
+
+    //angel effects (and spawner)
+    public void setSpeed(float newSpeed)
+    {
+        speed = newSpeed;
+        ai.maxSpeed = speed;
+    }
+
+    public float getSpeed()
+    {
+        return speed;
     }
 }

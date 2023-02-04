@@ -136,8 +136,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5debae2d719b13d4face80986527380e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  duration: 5
-  strength: 0
   itemBehavior: {fileID: 6207931551300248747}
 --- !u!1 &3470823276297402395
 GameObject:
@@ -186,6 +184,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   existenceDuration: 1
+  effectDuration: 10
+  cost: 5
+  costText: {fileID: 0}
 --- !u!1 &5929430898968732382
 GameObject:
   m_ObjectHideFlags: 0

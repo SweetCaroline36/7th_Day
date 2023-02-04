@@ -5,6 +5,8 @@ public class CameraController : MonoBehaviour
     [SerializeField] private Camera cam;
     [SerializeField] private float speed;
     [SerializeField] private float growRate;
+    [SerializeField] private float maxView = 30f;
+    [SerializeField] private float minView = 2.5f;
 
     void Start()
     {
@@ -30,11 +32,11 @@ public class CameraController : MonoBehaviour
         {
             transform.position += Vector3.down * speed * Time.deltaTime;
         }
-        if (Input.mouseScrollDelta.y > 0 && cam.orthographicSize >= 2.5)
+        if (Input.mouseScrollDelta.y > 0 && cam.orthographicSize >= minView)
         {
             cam.orthographicSize -= growRate;
         }
-        if (Input.mouseScrollDelta.y < 0 && cam.orthographicSize <= 30)
+        if (Input.mouseScrollDelta.y < 0 && cam.orthographicSize <= maxView)
         {
             cam.orthographicSize += growRate;
         }

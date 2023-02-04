@@ -6,8 +6,12 @@ using System.Linq;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private GameObject biblePrefab, boozePrefab, tammiPrefab, moneyPrefab, knifePrefab;
-    //[SerializeField] private CorruptionBar bar;
+    [SerializeField] private float angelSpeedIncrease = 2.5f;
+    [SerializeField] private float offset;
+
     private bool holding = false;
+    public static bool murdering = false;
+
     private GameObject activeItem;
 
     void Start()
@@ -17,7 +21,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if(holding)
+        if(holding && !murdering)
         {
             Vector3 mousePos = Input.mousePosition;
             activeItem.transform.position = Camera.main.ScreenToWorldPoint(new Vector3(mousePos.x, mousePos.y, 10.0f));
@@ -25,45 +29,60 @@ public class PlayerController : MonoBehaviour
             {
                 placeItem();
             }
+        } else if (holding && murdering) {
+            Vector3 mousePos = Input.mousePosition;
+            activeItem.transform.position = Camera.main.ScreenToWorldPoint(new Vector3(mousePos.x + offset + 10f, mousePos.y - offset, 10.0f));
         }
     }
 
     public void createBible()
     {
-        CorruptionText.amount -= 5;
+        CorruptionText.amount -= biblePrefab.GetComponent<ItemBehavior>().getCost();
         CorruptionBar.Instance.SetValue(CorruptionText.amount);
         holdItem(biblePrefab);
     }
     public void createBooze()
     {
-        CorruptionText.amount += 4;
+        CorruptionText.amount += boozePrefab.GetComponent<ItemBehavior>().getCost();
         CorruptionBar.Instance.SetValue(CorruptionText.amount);
         holdItem(boozePrefab);
     }
     public void createMoney()
     {
-        CorruptionText.amount += 7;
+        CorruptionText.amount += moneyPrefab.GetComponent<ItemBehavior>().getCost();
         CorruptionBar.Instance.SetValue(CorruptionText.amount);
         holdItem(moneyPrefab);
     }
     public void createTammi()
     {
-        CorruptionText.amount += 10;
+        CorruptionText.amount += tammiPrefab.GetComponent<ItemBehavior>().getCost();
         CorruptionBar.Instance.SetValue(CorruptionText.amount);
         holdItem(tammiPrefab);
     }
     public void createKnife()
     {
-        CorruptionText.amount += 50;
+        CorruptionText.amount += knifePrefab.GetComponent<ItemBehavior>().getCost();
         CorruptionBar.Instance.SetValue(CorruptionText.amount);
+        murdering = true;
         holdItem(knifePrefab);
     }
-    
     public void createAngel()
     {
         CorruptionText.amount = 0;
         CorruptionBar.Instance.SetValue(CorruptionText.amount);
-        //holdItem(knifePrefab);
+        increaseSpeed();
+    }
+
+    //angel effect
+    private void increaseSpeed()
+    {
+        var humans = GameObject.FindGameObjectsWithTag("Human");
+        for(int i = 0; i < humans.Length; i++)
+        {
+            var controller = humans[i].GetComponent<HumanController>();
+            var currentSpeed = controller.getSpeed();
+            controller.setSpeed(currentSpeed *= angelSpeedIncrease);
+        }
     }
 
     public void holdItem(GameObject i)
@@ -79,6 +98,13 @@ public class PlayerController : MonoBehaviour
         holding = false;
         activeItem.GetComponent<ItemBehavior>().placeItem();
         activeItem.transform.GetChild(0).gameObject.GetComponent<CircleCollider2D>().enabled = true;
+        activeItem = null;
+    }
+
+    public void stopHoldingKnife()
+    {
+        holding = false;
+        //Destroy(activeItem);
         activeItem = null;
     }
 }

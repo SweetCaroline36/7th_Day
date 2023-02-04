@@ -19,6 +19,7 @@ public class HumanSpawner : MonoBehaviour
         CorruptionBar.Instance.SetValue(CorruptionText.amount);
         GameObject newHuman = Instantiate(humanPrefab, randomLocation(), Quaternion.identity);
         newHuman.GetComponent<SpriteRenderer>().sprite = spriteOptions[randomIndex()];
+        newHuman.GetComponent<HumanController>().setSpeed(Random.Range(1f, 2f));
     }
 
     private int randomIndex()

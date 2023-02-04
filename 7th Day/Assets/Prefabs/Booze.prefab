@@ -270,3 +270,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   existenceDuration: 7
+  cost: 4
