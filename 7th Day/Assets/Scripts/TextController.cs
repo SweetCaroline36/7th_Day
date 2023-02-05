@@ -3,7 +3,9 @@ using UnityEngine;
 public class TextController : MonoBehaviour
 {
     public static TextController Instance;
-    public StoryScene currentScene;
+
+    [SerializeField] private StoryScene[] scenes;
+    //public StoryScene currentScene;
     public BottomBarController bottomBar;
 
     void Awake()
@@ -33,13 +35,17 @@ public class TextController : MonoBehaviour
                 {
                     GameManager.Instance.activateGary();
                 }
-                if (bottomBar.IsLastSentence())
+                if (bottomBar.IsLastSentence() && !GameManager.Instance.getGameOver())
                 {
                     GameManager.Instance.ChangeState(GameState.Game);
 
                     //currentScene = currentScene.nextScene;
                     //bottomBar.PlayScene(currentScene);
-                } else
+                } else if (bottomBar.IsLastSentence() && GameManager.Instance.getGameOver())
+                {
+                    GameManager.Instance.activateGameOverCanvas();
+                }
+                else
                 {
                     bottomBar.PlayNextSentence();
                 }
@@ -49,6 +55,22 @@ public class TextController : MonoBehaviour
 
     public void StartTutorial()
     {
-        bottomBar.PlayScene(currentScene);
+        bottomBar.PlayScene(scenes[0]);
+    }
+    public void StartGoodEnding()
+    {
+        bottomBar.PlayScene(scenes[1]);
+    }
+    public void StartTreeEnding()
+    {
+        bottomBar.PlayScene(scenes[2]);
+    }
+    public void StartCorruptionEnding()
+    {
+        bottomBar.PlayScene(scenes[3]);
+    }
+    public void StartKillAllEnding()
+    {
+        bottomBar.PlayScene(scenes[4]);
     }
 }

@@ -12,5 +12,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e819e3e6e3331a44b022f0dc999b77a, type: 3}
   m_Name: Ending 4
   m_EditorClassIdentifier: 
-  sentences: []
-  nextScene: {fileID: 0}
+  sentences:
+  - text: '*Sigh* Wow, I needed that. Man, do I feel refreshed.'
+    speaker: {fileID: 11400000, guid: 7b04568d34a8aa046af38b1e7346170b, type: 2}
+    clip: {fileID: 8300000, guid: 9e2a48dbcc86d63458cd1a4b3bf57654, type: 3}
+    visual: {fileID: 21300000, guid: 5b2210ac8d8a62f4bb4344b48c163797, type: 3}
+  - text: "\u2026."
+    speaker: {fileID: 11400000, guid: 7b04568d34a8aa046af38b1e7346170b, type: 2}
+    clip: {fileID: 0}
+    visual: {fileID: 21300000, guid: a713bc7ad36ead540a9cebb4f9002449, type: 3}
+  - text: " \u2026\u2026.."
+    speaker: {fileID: 11400000, guid: 7b04568d34a8aa046af38b1e7346170b, type: 2}
+    clip: {fileID: 0}
+    visual: {fileID: 21300000, guid: a713bc7ad36ead540a9cebb4f9002449, type: 3}
+  - text: Where is everyone???
+    speaker: {fileID: 11400000, guid: 7b04568d34a8aa046af38b1e7346170b, type: 2}
+    clip: {fileID: 8300000, guid: 6e8f0b979d975c64483c81ae0a717ed6, type: 3}
+    visual: {fileID: 21300000, guid: cc1841da6e52cbd49b9eb288f343b065, type: 3}
+  - text: "YOU WHAT!?..... I\u2026 You\u2026. Uhhhh\u2026\u2026 huh\u2026.. I didn\u2019t
+      think you\u2019d do that\u2026."
+    speaker: {fileID: 11400000, guid: 7b04568d34a8aa046af38b1e7346170b, type: 2}
+    clip: {fileID: 8300000, guid: 946d108e2e8b6eb45ab6214f031257b0, type: 3}
+    visual: {fileID: 21300000, guid: cc1841da6e52cbd49b9eb288f343b065, type: 3}
+  - text: "Well that\u2019s one way of solving the problem. Lucifer did the same
+      thing with the dinosaurs. That\u2019s on me for not learning.  Welp, see ya
+      round."
+    speaker: {fileID: 11400000, guid: 7b04568d34a8aa046af38b1e7346170b, type: 2}
+    clip: {fileID: 8300000, guid: 98c7bb6c193c4224cbf9a27e1189e834, type: 3}
+    visual: {fileID: 21300000, guid: 5c7cbb7b333fb2247b05e93daa94808e, type: 3}
+  - text: The ground falls beneath you as God kicks you out of Heaven.
+    speaker: {fileID: 11400000, guid: 3e3fabb9b5f11264987cd8c36d81bbdb, type: 2}
+    clip: {fileID: 0}
+    visual: {fileID: 0}

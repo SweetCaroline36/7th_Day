@@ -12,11 +12,13 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
     public GameState GameState;
 
-    [SerializeField] private GameObject tutorialCanvas, corruptionCanvas, buttonCanvas, gameOverCanvas;
+    [SerializeField] private GameObject tutorialCanvas, corruptionCanvas, buttonCanvas, gameOverCanvas, skipButton;
 
     [SerializeField] private GameObject[] buttons;
 
     [SerializeField] private RectTransform expandTextBox;
+
+    [SerializeField] private AudioClip gameMusic, cutsceneMusic;
 
     [SerializeField] private bool gameOver = false;
 
@@ -55,12 +57,18 @@ public class GameManager : MonoBehaviour
     {
         return gameOver;
     }
-    public void GameOver()
+    public void GameOver(int ending)
     {
         gameOver = true;
+        print("game ended: ending " + ending);
         //scoreCanvas.SetActive(false);
-        gameOverCanvas.SetActive(true);
+        //gameOverCanvas.SetActive(true);
         //DiceManager.Instance.stopDragger();
+    }
+
+    public void activateGameOverCanvas()
+    {
+        gameOverCanvas.SetActive(true);
     }
 
     public void ChangeState(GameState newState)
@@ -69,33 +77,52 @@ public class GameManager : MonoBehaviour
         switch (newState)
         {
             case GameState.Tutorial:
+                CorruptionBar.Instance.SetValue(0);
+                AudioManager.Instance.StopMusic();
+                AudioManager.Instance.PlayMusic(cutsceneMusic);
+                gameOver = false;
                 activateAll(false);
                 corruptionCanvas.SetActive(false);
                 TextController.Instance.StartTutorial();
                 break;
             case GameState.Game:
+                gameOver = false;
+                HumanManager.Instance.gameStart();
+                AudioManager.Instance.StopDialogue();
+                AudioManager.Instance.StopMusic();
+                AudioManager.Instance.PlayMusic(gameMusic);
                 activateAll(true);
                 activateCorruptionBar(true);
+                CorruptionBar.Instance.SetValue(0);
+                enableSkipButton(false);
                 tutorialCanvas.SetActive(false);
                 break;
             case GameState.GoodEnding:
                 activateCorruptionBar(false);
                 activateAll(false);
-                GameOver();
+                tutorialCanvas.SetActive(true);
+                TextController.Instance.StartGoodEnding();
+                GameOver(4);
                 break;
             case GameState.TreeEnding:
                 activateCorruptionBar(false);
                 activateAll(false);
-                GameOver();
+                tutorialCanvas.SetActive(true);
+                TextController.Instance.StartTreeEnding();
+                GameOver(1);
                 break;
             case GameState.CorruptionEnding:
                 activateAll(false);
-                GameOver();
+                tutorialCanvas.SetActive(true);
+                TextController.Instance.StartCorruptionEnding();
+                GameOver(3);
                 break;
             case GameState.KillAllEnding:
                 activateCorruptionBar(false);
                 activateAll(false);
-                GameOver();
+                tutorialCanvas.SetActive(true);
+                TextController.Instance.StartKillAllEnding();
+                GameOver(2);
                 break;
             default:
                 throw new ArgumentOutOfRangeException(nameof(newState), newState, null);
@@ -136,6 +163,10 @@ public class GameManager : MonoBehaviour
             buttons[i].SetActive(on);
             buttons[i].GetComponent<Button>().interactable = true;
         }
+    }
+    private void enableSkipButton(bool enabled)
+    {
+        skipButton.SetActive(enabled);
     }
 
     public void skipTutorial()

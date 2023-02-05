@@ -11,6 +11,7 @@ public class HumanController : MonoBehaviour
     [SerializeField] private bool tutorial = false;
     [SerializeField] private float speed;
     [SerializeField] private SpriteRenderer highlight;
+    [SerializeField] private SoundHolder deathSounds;
     private Vector3 treePos;
     private Vector3 startingPos;
     private Vector3 goalPos;
@@ -43,6 +44,13 @@ public class HumanController : MonoBehaviour
         if(tempted)
         {
             headTowardsLocation(goalPos);
+        }
+        if (GameManager.Instance.getGameOver())
+        {
+            ai.enabled = false;
+        } else
+        {
+            ai.enabled = true;
         }
     }
 
@@ -109,6 +117,9 @@ public class HumanController : MonoBehaviour
     //knife effects
     public void die()
     {
+        print("dying");
+        //play sound
+        deathSounds.playRandomClip();
         Destroy(this.gameObject);
     }
 

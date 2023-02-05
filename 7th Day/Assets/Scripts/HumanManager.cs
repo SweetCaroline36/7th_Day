@@ -21,6 +21,19 @@ public class HumanManager : MonoBehaviour
         spawnZones = GameObject.FindGameObjectsWithTag("SpawnZone");
     }
 
+    public void gameStart()
+    {
+        var humans = GameObject.FindGameObjectsWithTag("Human");
+        for (int i = 0; i < humans.Length; i++)
+        {
+            Destroy(humans[i]);
+        }
+        GameObject adam = Instantiate(humanPrefab, new Vector3(1f, -17f, 0), Quaternion.identity);
+        adam.GetComponent<SpriteRenderer>().sprite = spriteOptions[0];
+        GameObject eve = Instantiate(humanPrefab, new Vector3(-29.5f, 32f, 0), Quaternion.identity);
+        eve.GetComponent<SpriteRenderer>().sprite = spriteOptions[1];
+    }
+
     public void spawnHuman()
     {
         CorruptionText.amount -= 40;

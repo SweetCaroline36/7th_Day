@@ -6,7 +6,7 @@ using System.Linq;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private GameObject biblePrefab, boozePrefab, tammiPrefab, moneyPrefab, knifePrefab;
-    [SerializeField] private float angelSpeedIncrease = 2.5f;
+    [SerializeField] private float angelSpeedIncrease = 2f;
     [SerializeField] private float offset;
 
     private bool holding = false;
@@ -63,8 +63,11 @@ public class PlayerController : MonoBehaviour
     {
         CorruptionText.amount += knifePrefab.GetComponent<ItemBehavior>().getCost();
         CorruptionBar.Instance.SetValue(CorruptionText.amount);
-        murdering = true;
-        holdItem(knifePrefab);
+        if(!GameManager.Instance.getGameOver())
+        {
+            murdering = true;
+            holdItem(knifePrefab);
+        }
     }
     public void createAngel()
     {

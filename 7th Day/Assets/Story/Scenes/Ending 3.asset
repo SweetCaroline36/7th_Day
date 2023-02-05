@@ -12,5 +12,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e819e3e6e3331a44b022f0dc999b77a, type: 3}
   m_Name: Ending 3
   m_EditorClassIdentifier: 
-  sentences: []
-  nextScene: {fileID: 0}
+  sentences:
+  - text: "Wow, this place is bumpin\u2019! Why does this place look like Florida?"
+    speaker: {fileID: 11400000, guid: 7b04568d34a8aa046af38b1e7346170b, type: 2}
+    clip: {fileID: 8300000, guid: 7ea0597c4814f574c83378cb0edf38c0, type: 3}
+    visual: {fileID: 21300000, guid: a713bc7ad36ead540a9cebb4f9002449, type: 3}
+  - text: "Oh shit, you let \u2018em go buck wild didn\u2019t you? Just look at \u2018em
+      down there just humping in their own filth\u2026 and is that Tammi?  You didn\u2019t
+      use her did you? Crap\u2026 welp, there\u2019s no coming back from that one."
+    speaker: {fileID: 11400000, guid: 7b04568d34a8aa046af38b1e7346170b, type: 2}
+    clip: {fileID: 8300000, guid: 677480c852e16aa41b5005899aa02cb4, type: 3}
+    visual: {fileID: 21300000, guid: a713bc7ad36ead540a9cebb4f9002449, type: 3}
+  - text: "Clean this shit up. I\u2019ll start over tomorrow. YO TAMMI lets go. I
+      got time to kill."
+    speaker: {fileID: 11400000, guid: 7b04568d34a8aa046af38b1e7346170b, type: 2}
+    clip: {fileID: 8300000, guid: 9968fc2ee6aac154baaf2e6aae5cf244, type: 3}
+    visual: {fileID: 21300000, guid: cc1841da6e52cbd49b9eb288f343b065, type: 3}
+  - text: Sure thing big man!
+    speaker: {fileID: 11400000, guid: 3b971ce6ba8dc2345909240f903767de, type: 2}
+    clip: {fileID: 8300000, guid: 48c641abc6fd73f448c6010045d02f56, type: 3}
+    visual: {fileID: 21300000, guid: a79644e38079bf54f9d150c6aec25928, type: 3}

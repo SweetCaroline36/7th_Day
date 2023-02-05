@@ -111,6 +111,7 @@ GameObject:
   - component: {fileID: 7633963846386859175}
   - component: {fileID: 7633963846386859174}
   - component: {fileID: 150395433004586824}
+  - component: {fileID: 94775312637570458}
   m_Layer: 0
   m_Name: Human
   m_TagString: Human
@@ -201,8 +202,10 @@ MonoBehaviour:
   ai: {fileID: 7633963846386859174}
   walkingTowardsTree: 1
   tempted: 0
+  tutorial: 0
   speed: 1.5
   highlight: {fileID: 7876197199905068178}
+  deathSounds: {fileID: 94775312637570458}
 --- !u!114 &7633963846386859175
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -289,3 +292,31 @@ CapsuleCollider2D:
   m_Offset: {x: -0.05104261, y: -0.051043034}
   m_Size: {x: 2.3930106, y: 4.152702}
   m_Direction: 0
+--- !u!114 &94775312637570458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7633963846386859181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28548183bc86ce24aa9f1de4095e231e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clip: {fileID: 0}
+  clips:
+  - {fileID: 8300000, guid: 75e75bbfed1b1b548bd93654b7f5e84c, type: 3}
+  - {fileID: 8300000, guid: 642aa50a26ca163438bd1b767b9835b0, type: 3}
+  - {fileID: 8300000, guid: 4bb231d688524f541a853ebfc55c258b, type: 3}
+  - {fileID: 8300000, guid: 642aa50a26ca163438bd1b767b9835b0, type: 3}
+  - {fileID: 8300000, guid: 0a7e1ba428894ff42ad103386e56038a, type: 3}
+  - {fileID: 8300000, guid: 75b86c676a9cc3d4d84819dba11c3268, type: 3}
+  - {fileID: 8300000, guid: c479cc878fcc13e47a92c61857357051, type: 3}
+  - {fileID: 8300000, guid: 3bf3f360b1a9a6c4a9da50198c69a744, type: 3}
+  - {fileID: 8300000, guid: 913eb3a19ff801f4f9f014025029c3de, type: 3}
+  - {fileID: 8300000, guid: ad6a931e6303c3a4b97d14f1e314f09d, type: 3}
+  - {fileID: 8300000, guid: 8677354ea2b6e7646afe6c49da0b4170, type: 3}
+  - {fileID: 8300000, guid: 8cd35404b862dc146b2b3f5183e0e23c, type: 3}
+  - {fileID: 8300000, guid: db270453c42bb1744b41b47ccf533927, type: 3}
+  - {fileID: 8300000, guid: 2a1786ce75c17bd41b9116178eaf3b5a, type: 3}

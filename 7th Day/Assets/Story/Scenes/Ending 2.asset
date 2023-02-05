@@ -12,5 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e819e3e6e3331a44b022f0dc999b77a, type: 3}
   m_Name: Ending 2
   m_EditorClassIdentifier: 
-  sentences: []
-  nextScene: {fileID: 0}
+  sentences:
+  - text: "I ask you to do one thing! Like literally you had one job\u2026 THE FIRST
+      JOB!"
+    speaker: {fileID: 11400000, guid: 7b04568d34a8aa046af38b1e7346170b, type: 2}
+    clip: {fileID: 8300000, guid: 105865c87c998a1429213ad18b160111, type: 3}
+    visual: {fileID: 21300000, guid: a713bc7ad36ead540a9cebb4f9002449, type: 3}
+  - text: "Just look at them! They\u2019re all freaking out about being nude\u2026
+      This is gonna take so long to fix!"
+    speaker: {fileID: 11400000, guid: 7b04568d34a8aa046af38b1e7346170b, type: 2}
+    clip: {fileID: 8300000, guid: fd026c22af1bcdb428543a7a8b7b673a, type: 3}
+    visual: {fileID: 21300000, guid: a713bc7ad36ead540a9cebb4f9002449, type: 3}

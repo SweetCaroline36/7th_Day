@@ -12,6 +12,14 @@ public class CorruptionBar : MonoBehaviour
         Instance = this;
     }
 
+    void Update()
+    {
+        if(slider.value >= 100 && !GameManager.Instance.getGameOver())
+        {
+            GameManager.Instance.ChangeState(GameState.CorruptionEnding);
+        }
+    }
+
     public void SetValue(int amount)
     {
         slider.value = amount;

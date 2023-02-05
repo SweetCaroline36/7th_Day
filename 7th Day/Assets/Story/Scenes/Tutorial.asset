@@ -13,60 +13,95 @@ MonoBehaviour:
   m_Name: Tutorial
   m_EditorClassIdentifier: 
   sentences:
-  - text: "O my Me, am I beat\u2026 I haven\u2019t been this tired since Lucifer\u2019s
-      going away party.  Hey you, get over here. Yeah, you. Look, when God tells
-      you to come over, you do it."
+  - text: "O my Me\u2026 I haven\u2019t been this beat since Lucifer\u2019s going
+      away party.  Hey you, get over here. Yeah, you. Look, when God tells you to
+      come over, you do it."
     speaker: {fileID: 11400000, guid: 7b04568d34a8aa046af38b1e7346170b, type: 2}
+    clip: {fileID: 8300000, guid: ecb523b4333e60f478f5ed8837b7b270, type: 3}
+    visual: {fileID: 21300000, guid: cc1841da6e52cbd49b9eb288f343b065, type: 3}
   - text: "Look, I\u2019ve been working my Almighty ass off for six days straight\u2026 "
     speaker: {fileID: 11400000, guid: 7b04568d34a8aa046af38b1e7346170b, type: 2}
+    clip: {fileID: 8300000, guid: c4effb87537e4af46a99755f2f6061c2, type: 3}
+    visual: {fileID: 21300000, guid: cc1841da6e52cbd49b9eb288f343b065, type: 3}
   - text: "Yeah, I know that the day cycle concept doesn\u2019t make any sense at
       this point with the sun being made on \u201Cday four.\u201D But that\u2019s
       not the point!"
     speaker: {fileID: 11400000, guid: 7b04568d34a8aa046af38b1e7346170b, type: 2}
+    clip: {fileID: 8300000, guid: 3e798ac4da3f0d24080c43c2d2b4020f, type: 3}
+    visual: {fileID: 21300000, guid: a713bc7ad36ead540a9cebb4f9002449, type: 3}
   - text: "Look, what I\u2019m saying is I\u2019m tired\u2026 cool? But I didn\u2019t
       make these humans that smart, (and certainly not in my image\u2026)"
     speaker: {fileID: 11400000, guid: 7b04568d34a8aa046af38b1e7346170b, type: 2}
+    clip: {fileID: 8300000, guid: 45ac291f6b703644c92ca4fd9b17c338, type: 3}
+    visual: {fileID: 21300000, guid: 5c7cbb7b333fb2247b05e93daa94808e, type: 3}
   - text: I mean, just look at me.
     speaker: {fileID: 11400000, guid: 7b04568d34a8aa046af38b1e7346170b, type: 2}
+    clip: {fileID: 8300000, guid: 7ff88d37d112a214cbe45654bc029e01, type: 3}
+    visual: {fileID: 21300000, guid: be18b11c019c2f942902c7181762206e, type: 3}
   - text: "What I\u2019m trying to say is, I\u2019m putting you in charge."
     speaker: {fileID: 11400000, guid: 7b04568d34a8aa046af38b1e7346170b, type: 2}
+    clip: {fileID: 8300000, guid: df232107351ab5c43b7a905a73145d33, type: 3}
+    visual: {fileID: 21300000, guid: 5c7cbb7b333fb2247b05e93daa94808e, type: 3}
   - text: "There\u2019s only one rule: don\u2019t let them eat from the Tree of Knowledge.
       They\u2019re gonna get way too introspective if they do. "
     speaker: {fileID: 11400000, guid: 7b04568d34a8aa046af38b1e7346170b, type: 2}
-  - text: But you know how it is as soon as I leave. They are gonna go straight for
-      it, almost like they are using A* Pathfinding to find the fastest possible
+    clip: {fileID: 8300000, guid: 42fc26692b4588e43a925d5e3946cf8d, type: 3}
+    visual: {fileID: 21300000, guid: a713bc7ad36ead540a9cebb4f9002449, type: 3}
+  - text: But you know how it is. As soon as I leave, they are gonna go straight
+      for it, almost like they are using A* Pathfinding to find the fastest possible
       route.
     speaker: {fileID: 11400000, guid: 7b04568d34a8aa046af38b1e7346170b, type: 2}
+    clip: {fileID: 8300000, guid: f6c8b8b6e7de0ad4aa3c65fa1661ca62, type: 3}
+    visual: {fileID: 21300000, guid: 5c7cbb7b333fb2247b05e93daa94808e, type: 3}
   - text: "If they start going for the tree, just distract them with something. I
       got booze and money lying around\u2026 You know, appeal to their baser instincts."
     speaker: {fileID: 11400000, guid: 7b04568d34a8aa046af38b1e7346170b, type: 2}
+    clip: {fileID: 8300000, guid: c62f3205d23f44f479647e1768c05836, type: 3}
+    visual: {fileID: 21300000, guid: 5c7cbb7b333fb2247b05e93daa94808e, type: 3}
   - text: "Just remember, everything in moderation. You see, humans are new and kinda
       squishy\u2013like babies. You don\u2019t know what that is yet\u2026 Point
       is you have to be careful with them. "
     speaker: {fileID: 11400000, guid: 7b04568d34a8aa046af38b1e7346170b, type: 2}
+    clip: {fileID: 8300000, guid: 5b49e3236ff961141ad854b164e80055, type: 3}
+    visual: {fileID: 21300000, guid: 5c7cbb7b333fb2247b05e93daa94808e, type: 3}
   - text: "Here, I made this for you. This is the Corruption Bar\u2122 (Yes, I already
       trademarked it, I\u2019m God). With it you can see how corrupt your temptations
       are making them."
     speaker: {fileID: 11400000, guid: 7b04568d34a8aa046af38b1e7346170b, type: 2}
+    clip: {fileID: 8300000, guid: 3063056f3f771cd428e3ab40a2bd5e14, type: 3}
+    visual: {fileID: 21300000, guid: 5c42df267737f9347b855297c01f8678, type: 3}
   - text: If it starts to get bad you can use these.
     speaker: {fileID: 11400000, guid: 7b04568d34a8aa046af38b1e7346170b, type: 2}
+    clip: {fileID: 8300000, guid: 64abea2bdf0caeb4fb746bf7b303e430, type: 3}
+    visual: {fileID: 21300000, guid: 5c42df267737f9347b855297c01f8678, type: 3}
   - text: "I got you this book. It's the first in a long series, like Twilight. It\u2019s
       a short read right now so it won\u2019t last long, but it\u2019ll make them
       rethink their life choices."
     speaker: {fileID: 11400000, guid: 7b04568d34a8aa046af38b1e7346170b, type: 2}
+    clip: {fileID: 8300000, guid: bab4ea5f36f814e4f9eec5b6a6ff7a92, type: 3}
+    visual: {fileID: 21300000, guid: a713bc7ad36ead540a9cebb4f9002449, type: 3}
   - text: "If they are doing real bad just send Gary down there\u2026 Who\u2019s
       Gary?!"
     speaker: {fileID: 11400000, guid: 7b04568d34a8aa046af38b1e7346170b, type: 2}
+    clip: {fileID: 8300000, guid: d919f82f426e2c94ca37e21dc0778c0e, type: 3}
+    visual: {fileID: 21300000, guid: 5c42df267737f9347b855297c01f8678, type: 3}
   - text: "He's my homeboy, my rotten soldier, my sweet cheese, my good time boy.
       How DARE you not know Gary! He\u2019s biblically accurate!.... Weird?  YOU\u2019RE
       WEIRD!  You\u2019re some Neoclassical Renaissance bird-person art bullshit. "
     speaker: {fileID: 11400000, guid: 7b04568d34a8aa046af38b1e7346170b, type: 2}
+    clip: {fileID: 8300000, guid: 1315574a437c72f4fbb2d0a6af045dc2, type: 3}
+    visual: {fileID: 21300000, guid: 5c7cbb7b333fb2247b05e93daa94808e, type: 3}
   - text: "I am tired\u2026. Look, use Gary. He\u2019ll cleanse the humans, but they
       are gonna freak out when they see him so they\u2019ll probably start running."
     speaker: {fileID: 11400000, guid: 7b04568d34a8aa046af38b1e7346170b, type: 2}
+    clip: {fileID: 8300000, guid: 45cf9070796c21a4aa960fe8351dcc1e, type: 3}
+    visual: {fileID: 21300000, guid: a713bc7ad36ead540a9cebb4f9002449, type: 3}
   - text: "Look, I\u2019m running on empty. I need you to focus up. I know you can
       do this; I know Everything. And remember\u2026"
     speaker: {fileID: 11400000, guid: 7b04568d34a8aa046af38b1e7346170b, type: 2}
+    clip: {fileID: 8300000, guid: 298df42c77d5dd84b81c98a836f6eaf7, type: 3}
+    visual: {fileID: 21300000, guid: cc1841da6e52cbd49b9eb288f343b065, type: 3}
   - text: "don\u2019t fuck it up."
     speaker: {fileID: 11400000, guid: 7b04568d34a8aa046af38b1e7346170b, type: 2}
-  nextScene: {fileID: 0}
+    clip: {fileID: 8300000, guid: a4957d4930ad7ac4bb2c5cef5ba777a2, type: 3}
+    visual: {fileID: 21300000, guid: 5c42df267737f9347b855297c01f8678, type: 3}

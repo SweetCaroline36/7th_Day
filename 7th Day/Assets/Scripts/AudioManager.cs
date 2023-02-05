@@ -56,6 +56,15 @@ public class AudioManager : MonoBehaviour
     {
         effectSource.Stop();
     }
+    public void PlayMusic(AudioClip clip)
+    {
+        musicSource.clip = clip;
+        musicSource.Play();
+    }
+    public void StopMusic()
+    {
+        musicSource.Stop();
+    }
 
     public void ToggleMusic()
     {

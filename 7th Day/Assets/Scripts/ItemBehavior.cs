@@ -6,7 +6,7 @@ public class ItemBehavior : MonoBehaviour
     [SerializeField] private float effectDuration;
     [SerializeField] private int cost;
     private bool placed = false;
-    private bool canBeSelected = true;
+    //private bool canBeSelected = true;
 
     void Start()
     {
@@ -25,17 +25,12 @@ public class ItemBehavior : MonoBehaviour
 
             existenceDuration -= Time.deltaTime;
         }
-
-        if(!canBeSelected)
-        {
-
-        }
     }
 
     public void placeItem()
     {
         placed = true;
-        canBeSelected = false;
+        //canBeSelected = false;
     }
 
     public float getExistenceDuration()
