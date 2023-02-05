@@ -4,11 +4,9 @@ public class ItemBehavior : MonoBehaviour
 {
     [SerializeField] private float existenceDuration;
     [SerializeField] private float effectDuration;
-    [SerializeField] private float cooldownMax;
     [SerializeField] private int cost;
     private bool placed = false;
     private bool canBeSelected = true;
-    private float cooldown = 0;
 
     void Start()
     {
@@ -38,7 +36,6 @@ public class ItemBehavior : MonoBehaviour
     {
         placed = true;
         canBeSelected = false;
-        cooldown = cooldownMax;
     }
 
     public float getExistenceDuration()

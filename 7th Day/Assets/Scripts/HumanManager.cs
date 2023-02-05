@@ -1,3 +1,4 @@
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,7 +10,6 @@ public class HumanManager : MonoBehaviour
     [SerializeField] private GameObject humanPrefab;
     [SerializeField] private Sprite[] spriteOptions;
     private GameObject[] spawnZones;
-    private List<GameObject> humans;
 
     void Awake()
     {
@@ -23,17 +23,18 @@ public class HumanManager : MonoBehaviour
 
     public void spawnHuman()
     {
-        CorruptionText.amount -= 30;
+        CorruptionText.amount -= 40;
         CorruptionBar.Instance.SetValue(CorruptionText.amount);
         GameObject newHuman = Instantiate(humanPrefab, randomLocation(), Quaternion.identity);
-        humans.Add(newHuman);
         newHuman.GetComponent<SpriteRenderer>().sprite = spriteOptions[randomIndex()];
         newHuman.GetComponent<HumanController>().setSpeed(Random.Range(1f, 2f));
     }
 
     private int randomIndex()
     {
-        return Random.Range(0, spriteOptions.Length);
+        int randIndex = Random.Range(0, spriteOptions.Length);
+        print(randIndex);
+        return randIndex;
     }
 
     public Vector3 randomLocation()

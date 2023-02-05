@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour
         {
             Vector3 mousePos = Input.mousePosition;
             activeItem.transform.position = Camera.main.ScreenToWorldPoint(new Vector3(mousePos.x, mousePos.y, 10.0f));
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(0) && !murdering)
             {
                 placeItem();
             }

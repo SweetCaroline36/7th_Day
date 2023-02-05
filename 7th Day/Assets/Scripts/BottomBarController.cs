@@ -27,6 +27,8 @@ public class BottomBarController : MonoBehaviour
     public void PlayNextSentence()
     {
         StartCoroutine(TypeText(currentScene.sentences[++sentenceIndex].text));
+        AudioManager.Instance.StopDialogue();
+        AudioManager.Instance.PlayDialogue(currentScene.sentences[sentenceIndex].clip);
         personNameText.text = currentScene.sentences[sentenceIndex].speaker.speakerName;
         personNameText.color = currentScene.sentences[sentenceIndex].speaker.textColor;
     }

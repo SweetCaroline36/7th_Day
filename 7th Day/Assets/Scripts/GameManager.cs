@@ -69,17 +69,32 @@ public class GameManager : MonoBehaviour
         switch (newState)
         {
             case GameState.Tutorial:
-                for(int i = 0; i < buttons.Length; i++)
-                {
-                    buttons[i].SetActive(false);
-                }
+                activateAll(false);
                 corruptionCanvas.SetActive(false);
                 TextController.Instance.StartTutorial();
                 break;
             case GameState.Game:
+                activateAll(true);
+                activateCorruptionBar(true);
                 tutorialCanvas.SetActive(false);
                 break;
-            case GameState.GameOver:
+            case GameState.GoodEnding:
+                activateCorruptionBar(false);
+                activateAll(false);
+                GameOver();
+                break;
+            case GameState.TreeEnding:
+                activateCorruptionBar(false);
+                activateAll(false);
+                GameOver();
+                break;
+            case GameState.CorruptionEnding:
+                activateAll(false);
+                GameOver();
+                break;
+            case GameState.KillAllEnding:
+                activateCorruptionBar(false);
+                activateAll(false);
                 GameOver();
                 break;
             default:
@@ -87,13 +102,13 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void activateCorruptionBar()
+    public void activateCorruptionBar(bool on)
     {
-        corruptionCanvas.SetActive(true);
+        corruptionCanvas.SetActive(on);
     }
     public void activateTemptations()
     {
-        for(int i = 0; i < 3; i++)
+        for(int i = 0; i < 2; i++)
         {
             buttons[i].SetActive(true);
         }
@@ -101,6 +116,7 @@ public class GameManager : MonoBehaviour
     public void activateBible()
     {
         buttons[4].SetActive(true);
+        buttons[5].SetActive(true);
         expandTextBox.offsetMax += new Vector2(-300, 0);
     }
     public void activateGary()
@@ -110,7 +126,21 @@ public class GameManager : MonoBehaviour
     public void activateRest()
     {
         buttons[3].SetActive(true);
-        buttons[5].SetActive(true);
+        buttons[2].SetActive(true);
+    }
+
+    private void activateAll(bool on)
+    {
+        for (int i = 0; i < buttons.Length; i++)
+        {
+            buttons[i].SetActive(on);
+            buttons[i].GetComponent<Button>().interactable = true;
+        }
+    }
+
+    public void skipTutorial()
+    {
+        ChangeState(GameState.Game);
     }
 }
 
@@ -118,5 +148,8 @@ public enum GameState
 {
     Tutorial = 0,
     Game = 1,
-    GameOver = 2
+    GoodEnding = 2,
+    TreeEnding = 3,
+    CorruptionEnding = 4,
+    KillAllEnding = 5
 }

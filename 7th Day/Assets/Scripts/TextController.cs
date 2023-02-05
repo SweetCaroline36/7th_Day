@@ -17,29 +17,24 @@ public class TextController : MonoBehaviour
         {
             if (bottomBar.IsCompleted())
             {
-                if (bottomBar.getIndex() == 1)
+                if (bottomBar.getIndex() == 9)
                 {
-                    GameManager.Instance.activateCorruptionBar();
+                    GameManager.Instance.activateCorruptionBar(true);
                 }
-                if (bottomBar.getIndex() == 2)
+                if (bottomBar.getIndex() == 7)
                 {
                     GameManager.Instance.activateTemptations();
                 }
-                if (bottomBar.getIndex() == 3)
+                if (bottomBar.getIndex() == 10)
                 {
                     GameManager.Instance.activateBible();
                 }
-                if (bottomBar.getIndex() == 4)
+                if (bottomBar.getIndex() == 12)
                 {
                     GameManager.Instance.activateGary();
                 }
-                if (bottomBar.getIndex() == 5)
-                {
-                    GameManager.Instance.activateRest();
-                }
                 if (bottomBar.IsLastSentence())
                 {
-                    print("end of text");
                     GameManager.Instance.ChangeState(GameState.Game);
 
                     //currentScene = currentScene.nextScene;
