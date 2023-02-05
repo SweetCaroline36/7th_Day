@@ -201,7 +201,7 @@ MonoBehaviour:
   ai: {fileID: 7633963846386859174}
   walkingTowardsTree: 1
   tempted: 0
-  speed: 1
+  speed: 1.5
   highlight: {fileID: 7876197199905068178}
 --- !u!114 &7633963846386859175
 MonoBehaviour:

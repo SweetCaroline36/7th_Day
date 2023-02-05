@@ -25,8 +25,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 284536965193133710}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0.00000017881, z: 0}
+  m_LocalScale: {x: 0.525, y: 0.525, z: 0.525}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1290216099792352833}
@@ -73,12 +73,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 0d315c164d53cff44878e125dfb412bf, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ac211441910d1394ba0137426ca57858, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.84, y: 2.9}
+  m_Size: {x: 10.41, y: 19.11}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -220,8 +220,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5debae2d719b13d4face80986527380e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  duration: 6
-  strength: 2
   itemBehavior: {fileID: 3074977954726149622}
 --- !u!1 &6023113725017018020
 GameObject:
@@ -270,4 +268,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   existenceDuration: 10
+  effectDuration: 0
+  cooldownMax: 0
   cost: 10

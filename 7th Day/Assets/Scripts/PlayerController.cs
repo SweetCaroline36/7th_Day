@@ -96,6 +96,7 @@ public class PlayerController : MonoBehaviour
     public void placeItem()
     {
         holding = false;
+        //AnimationManager.Instance.startAnimation();
         activeItem.GetComponent<ItemBehavior>().placeItem();
         activeItem.transform.GetChild(0).gameObject.GetComponent<CircleCollider2D>().enabled = true;
         activeItem = null;

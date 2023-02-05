@@ -8,6 +8,7 @@ public class HumanController : MonoBehaviour
     [SerializeField] private AIPath ai;
     [SerializeField] private bool walkingTowardsTree = true;
     [SerializeField] private bool tempted = false;
+    [SerializeField] private bool tutorial = false;
     [SerializeField] private float speed;
     [SerializeField] private SpriteRenderer highlight;
     private Vector3 treePos;
@@ -21,7 +22,20 @@ public class HumanController : MonoBehaviour
 
         startingPos = new Vector3(this.gameObject.transform.position.x, this.gameObject.transform.position.y, 0);
         treePos = new Vector3(tree.transform.position.x, tree.transform.position.y, 0);
+
         headToTree();
+        /*
+        if (!tutorial)
+        {
+            headToTree();
+        } 
+        else 
+        { 
+            Vector3 randomDestination = new Vector3(-38f, 7.8f, 0);//HumanManager.Instance.randomLocation();
+            ai.destination = randomDestination;
+            ai.SearchPath();
+        } 
+        */
     }
 
     void Update()
